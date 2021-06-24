@@ -4,3 +4,6 @@ node_modules/
 # config files
 src/config/dev.js
 src/config/prod.js
+
+# package-lock
+package-lock.json
