@@ -1,8 +1,8 @@
 import express from 'express';
+// import { relatedProducts } from '../models/products';
+
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.status(200).send('Hello, World!');
-});
+// router.get('/', relatedProducts);
 
 export default router;
