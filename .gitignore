@@ -1,5 +1,8 @@
 # folders
 node_modules/
+dist/
+tools/
+test
 
 # config files
 src/config/dev.js
@@ -7,3 +10,6 @@ src/config/prod.js
 
 # package-lock
 package-lock.json
+
+# environment file
+.env
