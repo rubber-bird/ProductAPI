@@ -2,6 +2,7 @@ import express from 'express';
 import {
   productsController,
   productInformationController,
+  productStylesController,
   relatedProductsController,
 } from '../controllers/products';
 
@@ -14,9 +15,7 @@ router.get('/', productsController);
 router.get('/:productId', productInformationController);
 
 // GET /products/:productId/styles
-router.get('/:productId/styles', (req, res) => {
-  res.sendStatus(200);
-});
+router.get('/:productId/styles', productStylesController);
 
 // GET /products/:productId/related
 router.get('/:productId/related', relatedProductsController);

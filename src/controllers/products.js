@@ -1,6 +1,7 @@
 import {
   getProducts,
   getProductInformation,
+  getProductStyles,
   getRelatedProducts,
 } from '../models/products';
 
@@ -31,6 +32,17 @@ async function productInformationController(req, res) {
   }
 }
 
+async function productStylesController(req, res) {
+  const { productId } = req.params;
+  let result;
+  try {
+    result = await getProductStyles(productId);
+    res.status(200).json(result);
+  } catch (err) {
+    res.sendStatus(500);
+  }
+}
+
 async function relatedProductsController(req, res) {
   const { productId } = req.params;
   let result;
@@ -46,5 +58,6 @@ async function relatedProductsController(req, res) {
 export {
   productsController,
   productInformationController,
+  productStylesController,
   relatedProductsController,
 };

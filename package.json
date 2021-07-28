@@ -10,9 +10,10 @@
     "dev": "NODE_ENV=development nodemon src --exec babel-node src --require dotenv/config",
     "start": "NODE_ENV=production node ./dist/index.js",
     "build": "./node_modules/.bin/babel src -d dist",
-    "test": "echo 'Testing startd...' && mocha --require @babel/register 'test/*spec.js'",
+    "test": "echo 'Testing started...' && mocha --require @babel/register 'test/*spec.js'",
     "lint": "eslint ./src/**/*.js",
-    "precommit-msg": "echo 'Precommit checks...' && exit 0"
+    "precommit-msg": "echo 'Precommit checks...' && exit 0",
+    "docs": "jsdoc ./src/ -r -d docs -R ./README.md"
   },
   "pre-commit": [
     "precommit-msg",
@@ -33,6 +34,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
+    "newrelic": "^7.5.1",
     "pg": "^8.6.0"
   },
   "devDependencies": {
@@ -45,6 +47,7 @@
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",
+    "jsdoc": "^3.6.7",
     "mocha": "^9.0.1",
     "nodemon": "^2.0.7",
     "pre-commit": "^1.2.2",

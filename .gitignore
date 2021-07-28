@@ -2,14 +2,21 @@
 node_modules/
 dist/
 tools/
-test
+test/
+docs/
 
 # config files
 src/config/dev.js
 src/config/prod.js
+src/config/newrelic.js
+
+# log files
+*.log
 
 # package-lock
 package-lock.json
 
 # environment file
 .env
+
+.DS_Store
