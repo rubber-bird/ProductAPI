@@ -2,13 +2,12 @@
   "name": "productapi",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "start": "NODE_ENV=production node ./dist/index.js",
-    "start:dev": "NODE_ENV=development nodemon source --require dotenv/config ./source/index.js",
+    "start:dev": "NODE_ENV=development nodemon --watch source --require dotenv/config ./source/index.js",
     "lint": "eslint ./source/**/*.js",
     "precommit-msg": "echo 'Precommit checks...' && exit 0",
     "docs": "jsdoc ./source/ -r -d docs -R ./README.md"

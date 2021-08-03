@@ -1,18 +1,19 @@
 'use strict';
 
+const process = require('process');
 const server = require('./server');
 const config = require('./config');
-
-process.on('Unhandled rejection Error: no config', (err) => {
-  console.log('hahahaha', err);
-})
-
+const database = require('./database');
 
 console.log(config.postgres);
+
+
+
 server.start(config)
-  .then((app) => {
-    console.log('hopfully')
-  })
-  .catch((err) => {
-    console.log('e', err);
-  })
+.then((app) => {
+  console.log('hopfully')
+
+})
+.catch((err) => {
+  console.log('e', err);
+})
