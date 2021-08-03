@@ -131,7 +131,7 @@ function getRelatedProducts(productId) {
 
     pool.query(sqlQuery, [productId], (err, data) => {
       if (err) {
-        reject(err);
+        reject(new Error(err.stack));
       }
       resolve(data.rows[0].array_agg);
     });
