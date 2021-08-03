@@ -1,0 +1,28 @@
+config:
+  target: "http://localhost:3000/products"
+  phases:
+    - duration: 60
+      arrivalRate: 100
+      name: Warm up
+
+    - duration: 120
+      arrivalRate: 1000
+      name: Warm up cache
+
+    - duration: 500
+      arrivalRate: 1000
+      name: Stability
+
+
+scenarios:
+  - name: products
+    flow:
+      - get:
+          url: "/"
+
+  - name: products
+    flow:
+      - get:
+          url: "/{{$randomNumber(2,18000)}}"
+
+

@@ -6,11 +6,14 @@
     "test": "test"
   },
   "scripts": {
-    "start": "NODE_ENV=production node ./src/index.js",
+    "start": "NODE_ENV=production node --require dotenv/config ./src/index.js",
     "start:dev": "NODE_ENV=development nodemon --watch src --require dotenv/config ./src/index.js",
     "lint": "eslint ./src/**/*.js",
     "precommit-msg": "echo 'Precommit checks...' && exit 0",
-    "docs": "jsdoc ./source/ -r -d docs -R ./README.md"
+    "docs": "jsdoc ./source/ -r -d docs -R ./README.md",
+    "test": "jest",
+    "stress:test": "artillery run --output report.json ./tests/products.yml",
+    "stress:test:report": "artillery report report.json"
   },
   "pre-commit": [
     "precommit-msg",
@@ -28,12 +31,14 @@
   },
   "homepage": "https://github.com/rubber-bird/ProductAPI#readme",
   "dependencies": {
+    "artillery": "^1.7.6",
     "bluebird": "^3.7.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "newrelic": "^7.5.1",
-    "pg": "^8.6.0"
+    "pg": "^8.6.0",
+    "prom-client": "^13.1.0"
   },
   "devDependencies": {
     "chai": "^4.3.4",
