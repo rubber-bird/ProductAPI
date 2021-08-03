@@ -1,10 +1,10 @@
-import express from 'express';
-import {
+const express = require('express');
+const {
   productsController,
   productInformationController,
   productStylesController,
   relatedProductsController,
-} from '../controllers/products';
+} = require('../controllers/products');
 
 const router = express.Router();
 
@@ -20,4 +20,4 @@ router.get('/:productId/styles', productStylesController);
 // GET /products/:productId/related
 router.get('/:productId/related', relatedProductsController);
 
-export default router;
+module.exports = router;

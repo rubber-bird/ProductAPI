@@ -1,4 +1,4 @@
-import pool from '../config/db';
+const pool = require('../config/db');
 
 /**
  * Gets all product records from the table that are matching the specified conditions.
@@ -21,7 +21,7 @@ function getProducts(page, count) {
 
     pool.query(sqlQuery, [page, count], (err, data) => {
       if (err) {
-        reject(err);
+        reject(new Error(err.stack));
       }
       resolve(data.rows);
     });
@@ -138,7 +138,7 @@ function getRelatedProducts(productId) {
   });
 }
 
-export {
+module.exports = {
   getProducts,
   getProductInformation,
   getProductStyles,

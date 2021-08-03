@@ -1,9 +1,9 @@
-import {
+const {
   getProducts,
   getProductInformation,
   getProductStyles,
   getRelatedProducts,
-} from '../models/products';
+} = require('../models/products');
 
 async function productsController(req, res) {
   const { page, count } = req.params;
@@ -55,7 +55,7 @@ async function relatedProductsController(req, res) {
   }
 }
 
-export {
+module.exports = {
   productsController,
   productInformationController,
   productStylesController,

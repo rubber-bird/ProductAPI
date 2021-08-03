@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=production node ./dist/index.js",
-    "start:dev": "NODE_ENV=development nodemon --watch source --require dotenv/config ./source/index.js",
+    "start:dev": "NODE_ENV=development nodemon --watch src --require dotenv/config ./src/index.js",
     "lint": "eslint ./source/**/*.js",
     "precommit-msg": "echo 'Precommit checks...' && exit 0",
     "docs": "jsdoc ./source/ -r -d docs -R ./README.md"
