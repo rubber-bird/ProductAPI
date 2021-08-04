@@ -57,7 +57,7 @@ function getProductInformation(productId) {
 
     pool.query(sqlQuery, [productId], (err, data) => {
       if (err) {
-        reject(err);
+        reject(new Error(err.stack));
       }
       resolve(data.rows);
     });
@@ -104,7 +104,7 @@ function getProductStyles(productId) {
 
     pool.query(sqlQuery, [productId], (err, data) => {
       if (err) {
-        reject(err);
+        reject(new Error(err.stack));
       }
       resolve(data.rows);
     });
