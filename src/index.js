@@ -23,7 +23,7 @@ client.collectDefaultMetrics({
   register,
 });
 
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
+const accessLogStream = fs.createWriteStream(path.join(__dirname, '../logs/access.log'), { flags: 'a' });
 
 app.use(logger('combined', { stream: accessLogStream }));
 app.use(express.json());
@@ -41,5 +41,8 @@ app.listen(process.env.PORT, (error) => {
 
   console.log(`Server succesfully started at ${process.env.PORT}!`);
 });
+
+// metrics.captureAllRoutes(app);
+// metrics.setupMetricService();
 
 module.exports = app;

@@ -12,8 +12,8 @@
     "precommit-msg": "echo 'Precommit checks...' && exit 0",
     "docs": "jsdoc ./source/ -r -d docs -R ./README.md",
     "test": "jest",
-    "stress:test": "artillery run --output report.json ./tests/products.yml",
-    "stress:test:report": "artillery report report.json"
+    "stress:test": "artillery run --output ./reports/report.json ./tests/products.yml",
+    "stress:test:report": "artillery report ./reports/report.json"
   },
   "pre-commit": [
     "precommit-msg",
